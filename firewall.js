@@ -1,4 +1,6 @@
-
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 $('.ip').bind('keyup', function() {
     $('#form').delay(200).submit();
     //console.log("Running");
@@ -33,11 +35,16 @@ $('.ip').bind('keyup', function() {
     // If we made a loss
     if (total < fwt) {
         leftover = fwt - total;
+        leftover = numberWithCommas(leftover);
+        total = numberWithCommas(total);
+
         output = "<p> The total cost recovered is £" + total + "<br><br> We made a loss of £"+leftover+
             " <br><br> And brought on a total of "+clients+" clients</p>" ;
     } else {
         //We made a profit
-        leftover = total - fwt
+        leftover = total - fwt;
+        leftover = numberWithCommas(leftover);
+        total = numberWithCommas(total);
         output = "<p> The total cost recovered is £" + total + "<br><br> We made £"+leftover+
             " <br><br> And brought on a total of "+clients+" clients</p>" ;
     }
