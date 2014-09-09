@@ -10,8 +10,8 @@ $('.ip').bind('keyup', function() {
     var ny =  parseInt($('#NY').val());
     //Clients added per year
     var cpy =  parseInt($('#CPY').val());
-    //var tfwt = $('#FWT').val();
-    var fwt = parseInt($('#FWT').val());
+    //Firewall total cost
+    var fwt = parseInt($('#FWT').val()) ||parseInt(0);
     var total =  parseInt(0);
     var clients =  parseInt(0);
     var output = "";
