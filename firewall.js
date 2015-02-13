@@ -5,13 +5,13 @@ $('.ip').bind('keyup', function() {
     $('#form').delay(200).submit();
 
     //Cost per Client
-    var cpc =  parseInt($('#CPC').val());
+    var cpc =  parseInt($('#CPC').val()) || parseInt(0);
     //Number of years
-    var ny =  parseInt($('#NY').val());
+    var ny =  parseInt($('#NY').val()) || parseInt(0);
     //Clients added per year
-    var cpy =  parseInt($('#CPY').val());
+    var cpy =  parseInt($('#CPY').val()) || parseInt(0);
     //Firewall total cost
-    var fwt = parseInt($('#FWT').val()) ||parseInt(0);
+    var fwt = parseInt($('#FWT').val()) || parseInt(0);
     var total =  parseInt(0);
     var clients =  parseInt(0);
     var output = "";
